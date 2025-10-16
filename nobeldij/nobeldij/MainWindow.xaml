@@ -1,0 +1,25 @@
+﻿<Window x:Class="nobeldij.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:nobeldij"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="tablazat" Margin="0,0,362,0"/>
+        <TextBox x:Name="ev" HorizontalAlignment="Left" Margin="634,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tipus" HorizontalAlignment="Left" Margin="634,78,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="knev" HorizontalAlignment="Left" Margin="634,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="vnev"  HorizontalAlignment="Left" Margin="634,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Évszám" HorizontalAlignment="Left" Margin="544,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vezetéknév" HorizontalAlignment="Left" Margin="544,152,0,0" VerticalAlignment="Top"/>
+        <Label Content="Keresztnév" HorizontalAlignment="Left" Margin="544,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Típus" HorizontalAlignment="Left" Margin="544,74,0,0" VerticalAlignment="Top"/>
+        <Button Content="Felvitel" HorizontalAlignment="Left" Margin="634,202,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Töröl" HorizontalAlignment="Left" Margin="639,265,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Kiír" HorizontalAlignment="Left" Margin="644,317,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Kilépés" HorizontalAlignment="Left" Margin="634,364,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+
+    </Grid>
+</Window>
