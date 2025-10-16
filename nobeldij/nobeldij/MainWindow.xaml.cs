@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,45 +15,53 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace nobeldij
+namespace Nobeldij
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+
     public partial class MainWindow : Window
     {
-        List<nobel> nobelDijak = new List<nobel>();
+        List<dij> nobelDijak = new List<dij>();
         public MainWindow()
         {
+            InitializeComponent();
             StreamReader sr = new StreamReader("nobel.csv");
+            sr.ReadLine();
             while (!sr.EndOfStream)
             {
-                string[] adat = sr.ReadLine().Split(';');
-                nobelDijak.Add(new nobel(adat[0], adat[1], adat[2], adat[3], adat[4], adat[5], adat[6]));
+                nobelDijak.Add(new dij(sr.ReadLine()));
             }
-            InitializeComponent();
+            sr.Close();
+            tablazat.ItemsSource = nobelDijak;
+            tablazat.Items.Refresh();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void felvisz_Click(object sender, RoutedEventArgs e)
         {
-            //felvisz
+            dij newDij = new dij(Convert.ToInt32(ev.Text), tipus.Text, keresztnev.Text, vezeteknev.Text);
+            nobelDijak.Add(newDij);
+            tablazat.Items.Refresh();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void torol_Click(object sender, RoutedEventArgs e)
         {
-            //torol
+            if (tablazat.SelectedItem != null)
+            {
+                dij selectedDij = (dij)tablazat.SelectedItem;
+                nobelDijak.Remove(selectedDij);
+                tablazat.Items.Refresh();
+            }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void kiir_Click(object sender, RoutedEventArgs e)
         {
-            //kiir
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            //kilep
-            Application.Current.Shutdown();
+            StreamWriter sw = new StreamWriter("dijak2.csv");
+            foreach (var item in nobelDijak)
+            {
+                sw.WriteLine(item.ToString());
+            }
         }
     }
 }

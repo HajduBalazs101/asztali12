@@ -1,25 +1,41 @@
-﻿<Window x:Class="nobeldij.MainWindow"
+﻿<Window x:Class="Nobeldij.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:nobeldij"
+        xmlns:local="clr-namespace:Nobeldij"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="tablazat" Margin="0,0,362,0"/>
-        <TextBox x:Name="ev" HorizontalAlignment="Left" Margin="634,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tipus" HorizontalAlignment="Left" Margin="634,78,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="knev" HorizontalAlignment="Left" Margin="634,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="vnev"  HorizontalAlignment="Left" Margin="634,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Évszám" HorizontalAlignment="Left" Margin="544,38,0,0" VerticalAlignment="Top"/>
-        <Label Content="Vezetéknév" HorizontalAlignment="Left" Margin="544,152,0,0" VerticalAlignment="Top"/>
-        <Label Content="Keresztnév" HorizontalAlignment="Left" Margin="544,110,0,0" VerticalAlignment="Top"/>
-        <Label Content="Típus" HorizontalAlignment="Left" Margin="544,74,0,0" VerticalAlignment="Top"/>
-        <Button Content="Felvitel" HorizontalAlignment="Left" Margin="634,202,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Button Content="Töröl" HorizontalAlignment="Left" Margin="639,265,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="Kiír" HorizontalAlignment="Left" Margin="644,317,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
-        <Button Content="Kilépés" HorizontalAlignment="Left" Margin="634,364,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,3,7">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.285"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <DataGrid x:Name="tablazat" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="7,18,345,9"/>
+        <TextBox x:Name="ev" HorizontalAlignment="Left" Margin="551,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tipus" HorizontalAlignment="Left" Margin="551,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="keresztnev" HorizontalAlignment="Left" Margin="551,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="vezeteknev" HorizontalAlignment="Left" Margin="551,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Évszám:" HorizontalAlignment="Left" Margin="481,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Típus:" HorizontalAlignment="Left" Margin="488,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.052,0.73"/>
+        <Label Content="Keresztnév:" HorizontalAlignment="Left" Margin="481,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.563"/>
+        <Label Content="Vezetéknév:" HorizontalAlignment="Left" Margin="479,137,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="felvisz" Content="Felvisz" HorizontalAlignment="Left" Margin="592,197,0,0" VerticalAlignment="Top" Click="felvisz_Click"/>
+        <Button x:Name="torol" Content="Töröl" HorizontalAlignment="Left" Margin="591,222,0,0" VerticalAlignment="Top" Click="torol_Click" Height="22" Width="39" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="1.388"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="kiir" Content="Kiír" HorizontalAlignment="Left" Margin="591,255,0,0" VerticalAlignment="Top" Height="20" Width="36" Click="kiir_Click"/>
 
     </Grid>
 </Window>

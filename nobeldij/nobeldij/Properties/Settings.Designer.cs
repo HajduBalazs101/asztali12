@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nobeldij.Properties
+namespace Nobeldij.Properties
 {
 
 
